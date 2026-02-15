@@ -1,0 +1,633 @@
+/* ================================
+   RESET
+================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: #f4f8f6;
+  --bg-soft: #eaf3ef;
+  --white: #ffffff;
+
+  --primary: #6fbf9f;
+  --primary-dark: #4ca986;
+  --primary-light: #a8d9c7;
+
+  --text-main: #1f2d2a;
+  --text-light: #5f6f69;
+
+  --border: #dde9e4;
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --transition: 0.3s ease;
+  --max-width: 1180px;
+}
+
+/* ================================
+   BASE
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--text-light);
+}
+
+section {
+  padding: 110px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.logo img {
+  height: 200px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
+  background: linear-gradient(135deg, #f4f8f6 0%, #eaf3ef 100%);
+  padding: 80px;
+  border-radius: var(--radius-lg);
+}
+
+.hero p {
+  margin: 25px 0 35px;
+  max-width: 520px;
+}
+
+.hero-img {
+    max-width: 100%;
+    height: 420px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 34px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   SERVICES
+================================ */
+
+.services {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+}
+
+.services-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 70px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card img {
+  width: 55px;
+  margin-bottom: 18px;
+}
+
+img.icon-card {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+/* ================================
+   ABOUT
+================================ */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  width: 560px;
+  height: 440px;
+}
+
+
+.about p {
+  margin-bottom: 18px;
+}
+
+/* ================================
+   CTA
+================================ */
+
+.cta {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  padding: 90px 40px;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+}
+
+.cta p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: rgba(255,255,255,0.9);
+}
+
+.cta .btn-primary {
+  background: #ffffff;
+  color: var(--primary-dark);
+}
+
+.cta .btn-primary:hover {
+  background: var(--primary-light);
+}
+
+/* ================================
+   CONTACT SOCIAL
+================================ */
+
+.contact-social {
+  text-align: center;
+  background: var(--white);
+  padding: 90px 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.contact-social p {
+  max-width: 600px;
+  margin: 20px auto 40px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.social-links img {
+  width: 22px;
+  height: 22px;
+}
+
+/* ================================
+   FAQ
+================================ */
+
+.faq-section {
+  padding-top: 120px;
+}
+
+.faq-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.faq {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.faq details {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 20px 25px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+  position: relative;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.faq details[open] summary::after {
+  content: "–";
+}
+
+.faq p {
+  margin-top: 15px;
+  color: var(--text-light);
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 60px 0 40px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* =================================
+   BOTÃO FLUTUANTE WHATSAPP
+================================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float::after {
+  content: "Agendar pelo WhatsApp";
+  position: absolute;
+  right: 75px;
+  background: #ffffff;
+  color: #2e5f4d;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.whatsapp-float:hover::after {
+  opacity: 1;
+  right: 80px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float::after {
+    display: none;
+  }
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 980px) {
+
+  section {
+    padding: 80px 0;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+    text-align: center;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ================================
+   MOBILE MENU
+================================ */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 2px;
+  background: var(--text-main);
+  transition: var(--transition);
+}
+
+/* MENU LATERAL */
+.nav-menu {
+  transition: var(--transition);
+}
+
+/* ================================
+   MOBILE FIRST ADJUSTMENTS
+================================ */
+
+@media (max-width: 900px) {
+
+  /* HEADER */
+
+  .logo img {
+    height: 180px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.08);
+    padding: 100px 40px;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu a {
+    font-size: 1.1rem;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+    .hero img {
+    border-radius: 20px;
+    max-width: 100%;
+    height: 420px;
+    margin: auto;
+  }
+
+  /* SERVICES */
+
+  .services {
+    border-radius: 20px;
+  }
+
+  .service-card {
+    padding: 30px 22px;
+  }
+
+  /* ABOUT */
+
+  .about {
+    gap: 40px;
+  }
+
+  .about img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  max-width: 98%;
+  height: 320px;
+  margin: auto;
+}
+
+div.about-text {
+    text-align: center;
+}
+
+  /* CTA */
+
+  .cta {
+    padding: 60px 25px;
+    border-radius: 20px;
+  }
+
+  /* CONTACT */
+
+  .contact-social {
+    padding: 60px 25px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-links a {
+    justify-content: center;
+  }
+
+  /* FAQ */
+
+  .faq-section {
+    padding-top: 80px;
+  }
+
+}
